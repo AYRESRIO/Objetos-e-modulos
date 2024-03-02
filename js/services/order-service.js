@@ -1,8 +1,12 @@
-import { shipment } from "./shipping-service";
+import * as shippingService from './shipping-service.js';
 
 export function total(order){
 
-    return order.basic - (order.basic*(order.discount/100)) +shipment;
+const orderValue = order.basic;
+const deliveryFee = shippingService.shipment(order);
+const orderDiscount = orderValue * (order.discount/100);
+
+return orderValue - orderDiscount + deliveryFee;
 
 }
 

@@ -1,10 +1,12 @@
 export function shipment(order){
+    
+    const orderValue = order.basic;
 
-    if(basic<100.00){
+    if(orderValue < 100.00){
 
         return 20.00;
     }
-    else if(basic==100.00 && basic<200.00){
+    else if(orderValue < 200.00){
 
         return 12.00;
     }
